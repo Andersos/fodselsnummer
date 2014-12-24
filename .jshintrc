@@ -1,0 +1,14 @@
+{
+    "enforceall"    : true,
+    "indent"        : 4,
+    "quotmark"      : "single",
+    "maxparams"     : 3,
+    "maxdepth"      : 3,
+    "maxstatements" : 10,
+    "maxcomplexity" : 10,
+    "maxlen"        : 100,
+    "nocomma"       : false,
+
+    "node": true,
+    "mocha": true
+}
