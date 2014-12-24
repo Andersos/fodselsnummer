@@ -8,7 +8,8 @@
         "test": "npm run jsonlint && npm run jshint && mocha && npm run coverage",
         "jshint": "jshint index.js",
         "jsonlint": "jsonlint package.json --quiet && jsonlint npm-shrinkwrap.json --quiet && jsonlint .jshintrc --quiet",
-        "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
+        "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
+        "coverage-report": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
     },
     "keywords": [
         "nin",
@@ -29,9 +30,11 @@
         "url": "https://github.com/andersos/fodselsnummer/issues"
     },
     "devDependencies": {
+        "coveralls": "2.11.2",
         "istanbul": "0.3.5",
         "jshint": "2.5.11",
         "jsonlint": "1.6.2",
-        "mocha": "2.1.0"
+        "mocha": "2.1.0",
+        "mocha-lcov-reporter": "0.0.1"
     }
 }
