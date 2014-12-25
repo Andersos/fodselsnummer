@@ -22,6 +22,8 @@ describe('Fodselsnummer', function(){
 
     it('should return false when input is not valid length', function(){
         assert.equal(false, fodselsnummer('0'));
+        assert.equal(false, fodselsnummer(0));
+        assert.equal(false, fodselsnummer('0101010100601'));
         assert.equal(false, fodselsnummer(010101010060));
     });
 

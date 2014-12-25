@@ -5,7 +5,7 @@ module.exports = function (input) {
     }
 
     if (typeof input === 'string') {
-        if (input.length === 11 && !isNaN(input) &&
+        if (input.length === 11 &&
             isValidDOB(
                 input.slice(0,2),
                 input.slice(2,4),
@@ -13,7 +13,6 @@ module.exports = function (input) {
                 return true;
             }
         }
-
         return false;
     };
 
@@ -32,9 +31,5 @@ module.exports = function (input) {
     }
 
     function inRange(day, max) {
-        if(day > 0 && day <= max) {
-            return true;
-        } else {
-            return false;
-        }
+        return day > 0 && day <= max;
     }
