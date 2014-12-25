@@ -2,6 +2,27 @@
 
 National identification number of Norway
 
+## Usage
+
+```javascript
+fnr = require('fodselsnummer');
+
+// Validates
+fnr(11108900123)
+fnr('11108900123');
+
+// Generates valid fnr
+fnr.generate(new Date());
+fnr.generate(111089000);
+
+// Query for info
+var fnr = new Fodselsnummer('11108900123');
+
+fnr.getBirthDate();
+fnr.getGender();
+
+```
+
 ## License
 
 MIT © [Anders Olsen Sandvik](http://andersos.net)
