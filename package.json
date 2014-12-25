@@ -6,6 +6,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npm run jsonlint && npm run jshint && mocha && npm run coverage",
+        "mocha": "mocha",
         "jshint": "jshint index.js",
         "jsonlint": "jsonlint package.json --quiet && jsonlint npm-shrinkwrap.json --quiet && jsonlint .jshintrc --quiet",
         "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
