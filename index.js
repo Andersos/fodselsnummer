@@ -6,7 +6,7 @@ module.exports = function (input) {
 
     if (typeof input === 'string') {
         if (input.length === 11 &&
-            isValidDOB(
+            isValidFodselsdato(
                 input.slice(0,2),
                 input.slice(2,4),
                 parseInt(input.slice(4,6), 10))) {
@@ -16,7 +16,7 @@ module.exports = function (input) {
         return false;
     };
 
-    function isValidDOB(d, m, y) {
+    function isValidFodselsdato(d, m, y) {
         if(['01','03','05','07','08','10','12'].indexOf(m) > -1){
             return inRange(d, 31);
         } else if (['04','06','09','11'].indexOf(m) > -1) {
