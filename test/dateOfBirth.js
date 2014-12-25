@@ -7,11 +7,17 @@ describe('Date of birth', function(){
         assert.equal(false, fodselsnummer('00000000000'));
         assert.equal(false, fodselsnummer('31130000080'));
         assert.equal(false, fodselsnummer('32120000080'));
+        assert.equal(false, fodselsnummer('00120000080'));
     });
 
-    it.skip('should return false when invalid day in month', function() {
+    it('should return false when invalid day in month', function() {
         assert.equal(false, fodselsnummer('31040000022'));
-        assert.equal(false, fodselsnummer('29020000064'));
+        assert.equal(false, fodselsnummer('29020100064'));
+    });
+
+    it('should return true on leap year', function() {
+        assert.equal(true, fodselsnummer('29021600069'));
+        assert.equal(true, fodselsnummer('29020000064'));
     });
 
 });

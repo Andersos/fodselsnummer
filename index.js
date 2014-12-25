@@ -6,7 +6,10 @@ module.exports = function (input) {
 
     if (typeof input === 'string') {
         if (input.length === 11 && !isNaN(input) &&
-            isValidDOB(input.slice(0,2), input.slice(2,4), input.slice(4,6))) {
+            isValidDOB(
+                input.slice(0,2),
+                input.slice(2,4),
+                parseInt(input.slice(4,6), 10))) {
                 return true;
             }
         }
@@ -15,10 +18,23 @@ module.exports = function (input) {
     };
 
     function isValidDOB(d, m, y) {
-        if(m > 0 && m < 13) {
-            if(d > 0 && d < 32){
-                return true;
-            }
+        if(['01','03','05','07','08','10','12'].indexOf(m) > -1){
+            return inRange(d, 31);
+        } else if (['04','06','09','11'].indexOf(m) > -1) {
+            return inRange(d, 30);
+        } else if (m === '02') {
+            y = y + 2000;
+            var leapYearDays = ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 29 : 28;
+            return inRange(d, leapYearDays);
+        } else {
+            return false;
         }
-        return false;
+    }
+
+    function inRange(day, max) {
+        if(day > 0 && day <= max) {
+            return true;
+        } else {
+            return false;
+        }
     }
