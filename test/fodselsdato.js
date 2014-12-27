@@ -17,7 +17,11 @@ describe('Date of birth', function(){
 
     it('should return true on leap year', function() {
         assert.equal(true, fodselsnummer('29021600069'));
-        assert.equal(true, fodselsnummer('29020000064'));
+        assert.equal(true, fodselsnummer('29020050064'));
+    });
+
+    it('should return false for leap year in different millenia (1900)', function() {
+        assert.equal(false, fodselsnummer('29020000069'));
     });
 
 });

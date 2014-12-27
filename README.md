@@ -23,6 +23,9 @@ fnr.getGender();
 
 ```
 
+## Rules
+The rules are defined here https://lovdata.no/dokument/SF/forskrift/2007-11-09-1268/KAPITTEL_2
+
 ## License
 
 MIT © [Anders Olsen Sandvik](http://andersos.net)

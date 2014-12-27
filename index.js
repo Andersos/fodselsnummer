@@ -9,7 +9,8 @@ module.exports = function (input) {
             isValidFodselsdato(
                 input.slice(0,2),
                 input.slice(2,4),
-                parseInt(input.slice(4,6), 10))) {
+                getYearBorn(parseInt(input.slice(4,6), 10),
+                parseInt(input.slice(6,9), 10)))) {
                 return true;
             }
         }
@@ -22,7 +23,6 @@ module.exports = function (input) {
         } else if (['04','06','09','11'].indexOf(m) > -1) {
             return inRange(d, 30);
         } else if (m === '02') {
-            y = y + 2000;
             var leapYearDays = ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 29 : 28;
             return inRange(d, leapYearDays);
         } else {
@@ -32,4 +32,8 @@ module.exports = function (input) {
 
     function inRange(day, max) {
         return day > 0 && day <= max;
+    }
+
+    function getYearBorn(year, individ) {
+        return individ < 500 ? year + 1900 : year + 2000;
     }
