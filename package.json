@@ -7,7 +7,7 @@
     "scripts": {
         "test": "npm run jsonlint && npm run jshint && mocha && npm run coverage",
         "mocha": "mocha",
-        "jshint": "jshint index.js",
+        "jshint": "jshint index.js test",
         "jsonlint": "jsonlint package.json --quiet && jsonlint npm-shrinkwrap.json --quiet && jsonlint .jshintrc --quiet",
         "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
         "coverage-report": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
