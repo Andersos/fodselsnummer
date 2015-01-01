@@ -13,7 +13,7 @@ describe('Fodselsnummer', function(){
     });
 
     it('should return true when valid number fodselsnummer is passed', function(){
-        assert.equal(true, fodselsnummer(11108900123));
+        assert.equal(true, fodselsnummer('11108900123'));
     });
 
     it('should return true when valid string fodselsnummer is passed', function(){
@@ -21,10 +21,8 @@ describe('Fodselsnummer', function(){
     });
 
     it('should return false when input is not valid length', function(){
-        assert.equal(false, fodselsnummer('0'));
-        assert.equal(false, fodselsnummer(0));
-        assert.equal(false, fodselsnummer('0101010100601'));
-        assert.equal(false, fodselsnummer(010101010060));
+        assert.equal(false, fodselsnummer('1110890012'));
+        assert.equal(false, fodselsnummer('001010100601'));
     });
 
     it('should return false when input is not nummerical', function(){

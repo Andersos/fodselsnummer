@@ -8,12 +8,11 @@ National identification number of Norway
 fnr = require('fodselsnummer');
 
 // Validates
-fnr(11108900123)
 fnr('11108900123');
 
 // Generates valid fnr
 fnr.generate(new Date());
-fnr.generate(111089000);
+fnr.generate('111089');
 
 // Query for info
 var fnr = new Fodselsnummer('11108900123');
