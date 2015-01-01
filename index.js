@@ -1,7 +1,6 @@
 module.exports = function (input) {
 
     if (typeof input === 'string') {
-        console.log(input.length, input);
         if (input.length === 11 &&
             isValidFodselsdato(
                 input.slice(0,2),
