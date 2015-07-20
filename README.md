@@ -25,6 +25,12 @@ fnr.getGender();
 ## Rules
 The rules are defined here https://lovdata.no/dokument/SF/forskrift/2007-11-09-1268/KAPITTEL_2
 
-## License
+## Publish
 
-MIT © [Anders Olsen Sandvik](http://andersos.net)
+Update CHANGES.MD
+
+```bash
+$ npm version 
+$ git push --tags origin master
+$ npm publish
+```
